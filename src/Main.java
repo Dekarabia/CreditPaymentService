@@ -5,17 +5,16 @@ public class Main {
         CreditPaymentService service = new CreditPaymentService();
         int amount = 1_000_000; //сумма кредита
         double percent = 9.99; //процентная ставка
-        int term = 0; //срок кредитования
+        int term = 1;//срок страхования
 
+        double payment = (int) service.calculate(percent, amount, term);
+        System.out.println("Ежемесячный платеж по кредиту сроком на 1 год составит " + payment + " рублей");
 
-        double loanPayment = (int) service.calculate(percent, amount, term);
-        System.out.println("Ежемесячный платеж по кредиту сроком на 1 год составит " + loanPayment + " рублей");
+        double payment1 = (int) service.calculate(percent, amount, term);
+        System.out.println("Ежемесячный платеж по кредиту сроком на 2 года составит " + payment1 + " рублей");
 
-        double loanPayment1 = (int) service.calculate(percent, amount, 24);
-        System.out.println("Ежемесячный платеж по кредиту сроком на 2 года составит " + loanPayment1 + " рублей");
-
-        double loanPayment2 = (int) service.calculate(percent, amount, 36);
-        System.out.println("Ежемесячный платеж по кредиту сроком на 3 года составит " + loanPayment2 + " рублей");
+        double payment2 = (int) service.calculate(percent, amount, term);
+        System.out.println("Ежемесячный платеж по кредиту сроком на 3 года составит " + payment2 + " рублей");
 
     }
 
