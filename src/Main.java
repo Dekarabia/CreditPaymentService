@@ -3,17 +3,18 @@
 public class Main {
     public static void main(String[] args) {
         CreditPaymentService service = new CreditPaymentService();
-        int amount = 1_000_000; //сумма кредита
-        double percent = 9.99; //процентная ставка
-        int term = 1;//срок страхования
 
-        double payment = (int) service.calculate(percent, amount, term);
+        //percent - ежегодный процент
+        //amount - сумма
+        //term - срок кредитования
+
+        double payment = (int) service.calculate(9.99, 1000000, 12);
         System.out.println("Ежемесячный платеж по кредиту сроком на 1 год составит " + payment + " рублей");
 
-        double payment1 = (int) service.calculate(percent, amount, term);
+        double payment1 = (int) service.calculate(9.99, 1000000, 24);
         System.out.println("Ежемесячный платеж по кредиту сроком на 2 года составит " + payment1 + " рублей");
 
-        double payment2 = (int) service.calculate(percent, amount, term);
+        double payment2 = (int) service.calculate(9.99, 1000000, 36);
         System.out.println("Ежемесячный платеж по кредиту сроком на 3 года составит " + payment2 + " рублей");
 
     }
